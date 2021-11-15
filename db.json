@@ -1,0 +1,32 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "productName": "Laptop",
+            "categoryId": 1,
+            "unitPrice": 8000.0
+        },
+        {
+            "id": 2,
+            "productName": "Shirt",
+            "categoryId": 2,
+            "unitPrice": 100.0
+        },
+        {
+            "id": 3,
+            "productName": "GPU",
+            "categoryId": 1,
+            "unitPrice": 5000.0
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "categoryName": "Computers"
+        },
+        {
+            "id": 2,
+            "categoryName": "Clothes"
+        }
+    ]
+}
