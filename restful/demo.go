@@ -20,11 +20,11 @@ type Category struct {
 	CategoryName string `json:"categoryName"`
 }
 
-func GetAllProducts() {
+func GetAllProducts() ([]Product, error) {
 	response, err := http.Get("http://localhost:3000/products")
 
 	if err != nil {
-		fmt.Println("Bir sorun oluştu: ", err)
+		return nil, err
 	}
 
 	defer response.Body.Close()
@@ -33,14 +33,14 @@ func GetAllProducts() {
 
 	var products []Product
 	json.Unmarshal(bodyBytes, &products)
-	fmt.Println(products)
+	return products, nil
 }
 
-func GetAllCategories()  {
+func GetAllCategories() ([]Category, error) {
 	response, err := http.Get("http://localhost:3000/categories")
 
 	if err != nil {
-		fmt.Println("Bir sorun oluştu: ", err)
+		return nil, err
 	}
 
 	defer response.Body.Close()
@@ -49,7 +49,7 @@ func GetAllCategories()  {
 
 	var categories []Category
 	json.Unmarshal(bodyBytes, &categories)
-	fmt.Println(categories)
+	return categories, nil
 }
 
 func AddProduct()  {

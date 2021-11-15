@@ -1,14 +1,25 @@
 package main
 
-import "restfulIntro/restful"
+import (
+	"fmt"
+	"restfulIntro/restful"
+)
 
 func main() {
 
 	//Ürünleri listele
-	restful.GetAllProducts()
+	products, _ := restful.GetAllProducts()
+
+	for _, product := range products {
+		fmt.Println(product.ProductName)
+	}
 
 	//Kategorileri listele
-	restful.GetAllCategories()
+	categories, _ := restful.GetAllCategories()
+
+	for _, category := range categories {
+		fmt.Println(category.CategoryName)
+	}
 
 	//Ürün ekleme
 	restful.AddProduct()
