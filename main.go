@@ -1,6 +1,6 @@
 package main
 
-import "restfulIntro/restful"
+import "restfulIntro/project"
 
 func main() {
 
@@ -8,5 +8,5 @@ func main() {
 	//restful.GetValue()
 
 	//Set
-	restful.SetValue()
+	restful.GetAllProducts()
 }
