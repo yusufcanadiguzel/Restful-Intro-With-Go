@@ -9,4 +9,7 @@ func main() {
 
 	//Kategorileri listele
 	restful.GetAllCategories()
+
+	//Ürün ekleme
+	restful.AddProduct()
 }

@@ -1,6 +1,7 @@
 package restful
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
@@ -49,6 +50,20 @@ func GetAllCategories()  {
 	var categories []Category
 	json.Unmarshal(bodyBytes, &categories)
 	fmt.Println(categories)
+}
+
+func AddProduct()  {
+	var product Product = Product{CategoryId: 2, ProductName: "Jean", UnitPrice: 150.0}
+
+	jsonProduct, _ := json.Marshal(product)
+
+	response, err := http.Post("http://localhost:3000/products","application/json; charset = utf-8", bytes.NewBuffer(jsonProduct))
+
+	if err != nil {
+		fmt.Println("Bir sorun oluştu :", err)
+	}
+
+	defer response.Body.Close()
 }
 
 // ---------- JSON PLACE HOLDER MODEL ----------
