@@ -35,7 +35,21 @@ func GetAllProducts() {
 	fmt.Println(products)
 }
 
+func GetAllCategories()  {
+	response, err := http.Get("http://localhost:3000/categories")
 
+	if err != nil {
+		fmt.Println("Bir sorun oluştu: ", err)
+	}
+
+	defer response.Body.Close()
+
+	bodyBytes, _ := ioutil.ReadAll(response.Body)
+
+	var categories []Category
+	json.Unmarshal(bodyBytes, &categories)
+	fmt.Println(categories)
+}
 
 // ---------- JSON PLACE HOLDER MODEL ----------
 // type ToDo struct {

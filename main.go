@@ -1,12 +1,12 @@
 package main
 
-import "restfulIntro/project"
+import "restfulIntro/restful"
 
 func main() {
 
-	//Get
-	//restful.GetValue()
-
-	//Set
+	//Ürünleri listele
 	restful.GetAllProducts()
+
+	//Kategorileri listele
+	restful.GetAllCategories()
 }
